@@ -1,0 +1,419 @@
+/*разметка героя*/
+.main {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1600px;
+    height: 600px;
+
+    background-color: var(--background-color);
+    text-align: center;
+    color: var(--white-color);
+    background-image: linear-gradient(
+            to right,
+            var(--gradient-color),
+            var(--gradient-color)
+        ),
+        url('../images/hero.jpg');
+    background-position: center;
+}
+
+.main-slogan {
+    padding-left: 270px;
+    padding-right: 270px;
+    margin-bottom: var(--small-size);
+
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.main-bottom {
+    display: inline-block;
+    padding-top: var(--tiny-size);
+    padding-bottom: var(--tiny-size);
+    padding-right: 32px;
+    padding-left: 32px;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: var(--small-size);
+    color: var(--white-color);
+    background-color: var(--blue-color);
+
+    box-shadow: 0px 4px 4px var(--shadow-color);
+}
+
+/*общая разметка бекдропа*/
+.backdrop {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-backdrop);
+
+    transition: background-color var(--time) var(--function);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: background-color var(--time) var(--function),
+        opacity var(--time) var(--function);
+}
+
+.backdrop-modal {
+    position: absolute;
+    width: 528px;
+    height: 581px;
+    background-color: var(--white-color);
+}
+
+.backdrop-buttom {
+    position: absolute;
+    transform: translate(490px, 8px);
+    height: 30px;
+    width: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--backdrop-buttom);
+    background-color: var(--white-color);
+    border-radius: 50%;
+
+    transition: fill var(--time) var(--function);
+}
+
+.backdrop-buttom:hover,
+.backdrop-buttom:focus {
+    fill: var(--blue-color);
+}
+
+.backdrop-svg {
+    color: var(--black-color);
+}
+
+/*внутрення разметка бекдропа*/
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.modal-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.modal-label {
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: var(--grey-color);
+}
+
+.modal-wrap {
+    position: relative;
+}
+
+.modal-input {
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 40px;
+
+    border: 1px solid var(--input-color);
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+
+    transition: border-color var(--time) var(--function);
+}
+
+.modal-input:focus,
+.modal-text:focus {
+    border-color: var(--blue-color);
+}
+
+.modal-input:focus ~ .modal-icons {
+    fill: var(--blue-color);
+}
+
+.modal-icons {
+    position: absolute;
+    color: var(--main-color);
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 12px;
+
+    transition: fill var(--time) var(--function);
+}
+
+.modal-icons.backdrop-mail {
+    filter: drop-shadow(0px 4px 4px var(--backdrop-mail));
+}
+
+.modal-text {
+    display: block;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 20px;
+    border: 1px solid var(--input-color);
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+    color: var(--main-color);
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.modal-text::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: var(--placeholder-color);
+}
+
+.modal-tick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.modal-checkbox:checked + .tick-disable {
+    background-image: url('../images/check.svg');
+    background-color: var(--blue-color);
+    background-size: contain;
+    background-origin: border-box;
+    border-color: var(--blue-color);
+}
+
+.tick-disable {
+    display: inline-block;
+    margin-right: 8.38px;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+}
+
+.modal-agree {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--grey-color);
+}
+
+.modal-link {
+    color: var(--blue-color);
+    text-decoration: underline;
+}
+
+.form-bottom {
+    margin: auto;
+    padding-right: 55px;
+    padding-left: 56px;
+    border: transparent;
+}
+
+/*разметка особенностей*/
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: var(--big-size);
+    padding-bottom: var(--big-size);
+}
+
+.list-title {
+    flex-basis: 270px;
+}
+
+.list-title:not(:first-child) {
+    margin-left: var(--small-size);
+}
+
+.features-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 4px;
+
+    height: 120px;
+
+    background-color: var(--background-color-team);
+}
+
+.features-title {
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+}
+
+.features-desc {
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--grey-color);
+}
+
+/*чем мы занимаемся*/
+.skills {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--big-size);
+}
+
+.skills-item {
+    position: relative;
+    display: flex;
+}
+
+.skills-title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+
+    font-weight: 700px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white-color);
+    background-color: var(--skills-color);
+}
+
+/*команда*/
+
+.team {
+    text-align: center;
+    line-height: 19px;
+    background-color: var(--background-color-team);
+}
+
+.container.team {
+    padding-top: var(--big-size);
+}
+
+.team-title {
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.team-list {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--big-size);
+}
+
+.team-person {
+    border-radius: 0px 0px 4px 4px;
+    background-color: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team-list img {
+    margin-bottom: var(--small-size);
+}
+
+.team-name {
+    margin-bottom: var(--tiny-size);
+
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.team-position {
+    color: var(--grey-color);
+}
+
+/*клиенты*/
+
+.container.clients {
+    padding-top: var(--big-size);
+    padding-bottom: var(--big-size);
+}
+
+.client-title {
+    margin-bottom: 50px;
+
+    font-weight: 700px;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.client {
+    display: flex;
+    justify-content: space-between;
+}
+
+.client li + li {
+    margin-left: 30px;
+}
+
+.client-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 90px;
+    fill: var(--social-networks);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    transition: color var(--time) var(--function),
+        fill var(--time) var(--function),
+        border-color var(--time) var(--function);
+}
+
+.client-item a:hover,
+.client-item a:focus {
+    color: var(--blue-color);
+    fill: currentColor;
+    border-color: currentColor;
+    outline: none;
+}
